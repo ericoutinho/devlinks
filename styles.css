@@ -28,6 +28,16 @@
     --links-bg-hover: rgba(144, 122, 214, 0.2);
 }
 
+@media (min-width: 600px) {
+    :root {
+        --body-bg: #2c2a4a url(./assets/background-desktop.jpg) no-repeat center / cover;
+    }
+
+    :root.light {
+        --body-bg: #DABFFF url(./assets/background-desktop-light.jpg) no-repeat center / cover;
+    }
+}
+
 a {
     color: inherit;
 }
@@ -38,7 +48,7 @@ img {
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +61,8 @@ body * {
 }
 
 .container {
-    width: 360px;
+    /* width: 360px; */
+    width: min(580px, 100%);
     padding: 24px;
     display: flex;
     flex-direction: column;
