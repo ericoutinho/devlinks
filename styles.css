@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    
+    /* border: 1px solid red; */
+}
+
+:root {
+    --body-bg: #2c2a4a url(./assets/background.jpg) no-repeat center / cover;
+    --stroke-color: #907ad6;
+    --text-color: #fff;
+    --links-bg: rgba(255,255,255, 0.1);
+    --links-bg-hover: rgba(255,255,255, 0.2);
+}
+
+:root.light {
+    --body-bg: #DABFFF url(./assets/background-light.jpg) no-repeat center / cover;
+    --stroke-color: #907ad6;
+    --text-color: #062726;
+    --links-bg: rgba(144, 122, 214, 0.1);
+    --links-bg-hover: rgba(144, 122, 214, 0.2);
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--body-bg);
+    transition: background-image 0.3s;
+}
+
+body * {
+    color: var(--text-color);
+}
+
+.container {
+    width: 360px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 12px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile img {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    object-fit:cover;
+    object-position: left top;
+    border: 2px solid var(--stroke-color);
+    transition: object-position 0.3s;
+}
+
+.light .profile img {
+    object-position: left bottom;
+}
+
+.switch {
+    display: block;
+    margin: 0 auto;
+    width: 56px;
+    height: 25px;
+    position: relative;
+}
+
+.switch .circle {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background: #fff url(./assets/moon-outline.svg) no-repeat center / 20px;
+    border: 0;
+    padding: 16px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    translate: 0 -50%;
+    cursor: pointer;
+    outline: 0;
+    transition: outline 0.2s linear;
+    outline: 5px solid transparent;
+}
+
+.light .switch .circle {
+    background: #fff url(./assets/sunny-outline.svg) no-repeat center / 20px;
+    left: initial;
+    right: 0;
+}
+
+.switch .circle:hover {
+    outline-color: rgba(255,255,255, 0.2);
+}
+
+.light .switch .circle:hover {
+    outline-color: rgba(144, 122, 214, 0.2);
+}
+
+.switch .track {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    translate: 0 -50%;
+    border: 1px solid var(--stroke-color);
+    height: 24px;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.links a {
+    padding: 16px 24px;
+    border-radius: 8px;
+    background-color: var(--links-bg);
+    border: 1px solid var(--stroke-color);
+    text-decoration: none;
+    text-align: center;
+    transition: background-color .3s;
+}
+
+.links a:hover {
+    background-color: var(--links-bg-hover);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.social-links a {
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: background-color .3s;
+}
+
+.social-links a:hover {
+    background: rgba(255,255,255, 0.1);
+}
+
+.light .social-links a:hover {
+    background: rgba(144, 122, 214, 0.2);
+}
+
+.social-links a ion-icon {
+    translate: 0 2px;
+}
+
+footer {
+    font-size: .85rem;
+    text-align: center;
+}
